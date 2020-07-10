@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const path = require('path');
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = {
@@ -8,7 +8,9 @@ module.exports = {
         main: './src/index.js'
     },
     output: {
-        filename: '[name].bundle.js?version=[hash:8]'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js?version=[hash:8]',
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -73,6 +75,11 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss']
+    },
+    devServer: {
+        hot: true,
+        publicPath: '/',
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebPackPlugin({
