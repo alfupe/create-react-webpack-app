@@ -18,6 +18,11 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
+                test: /\.(ts|tsx)?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            },
+            {
                 test: /\.html$/,
                 loader: 'html-loader'
             },
@@ -67,7 +72,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.scss']
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss']
     },
     plugins: [
         new HtmlWebPackPlugin({
