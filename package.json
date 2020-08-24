@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development --devtool cheap-module-eval-source-map",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors"
   },
   "keywords": [],
   "author": "",
