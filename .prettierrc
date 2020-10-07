@@ -1,6 +1,5 @@
 {
   "singleQuote": true,
-  "jsxSingleQuote": true,
   "semi": true,
   "tabWidth": 2,
   "useTabs": false,
@@ -8,5 +7,13 @@
   "jsxBracketSameLine": false,
   "arrowParens": "always",
   "trailingComma": "all",
-  "printWidth": 80
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ],
 }
