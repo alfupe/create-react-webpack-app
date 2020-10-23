@@ -1,6 +1,11 @@
+/**
+ * Extra jest-dom asserts
+ */
 import '@testing-library/jest-dom/extend-expect';
 
-// enzyme
+/**
+ * Configure Enzyme
+ */
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
