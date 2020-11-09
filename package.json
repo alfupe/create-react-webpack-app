@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development --devtool cheap-module-eval-source-map",
-    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --env development --devtool cheap-module-eval-source-map",
+    "build": "webpack --env production",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"
