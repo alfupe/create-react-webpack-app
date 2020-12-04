@@ -98,6 +98,11 @@ module.exports = (env) => {
         components: path.resolve(__dirname, 'src/components'),
       },
     },
+    watchOptions: {
+      aggregateTimeout: 300,
+      ignored: /node_modules/,
+      poll: 1000,
+    },
     devServer: {
       hot: true,
       publicPath: '/',
