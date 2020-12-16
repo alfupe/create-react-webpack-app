@@ -58,6 +58,20 @@ module.exports = (env, argv) => {
           ],
         },
         {
+          test: /\.css$/,
+          exclude: /\.module.(s([ac])ss)$/,
+          use: [
+            {
+              loader: isDevelopment
+                ? 'style-loader'
+                : MiniCssExtractPlugin.loader,
+            },
+            {
+              loader: 'css-loader',
+            },
+          ],
+        },
+        {
           test: /\.s([ac])ss$/,
           exclude: /\.module.(s([ac])ss)$/,
           use: [
@@ -80,6 +94,18 @@ module.exports = (env, argv) => {
         {
           test: /\.(png|jpg|jpeg|gif|svg)$/,
           loader: 'file-loader',
+        },
+        {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/',
+              },
+            },
+          ],
         },
       ],
     },
